@@ -39,6 +39,7 @@ chmod +x aur-audit.clj
 
 ## Usage
 
+### 1. Audit a Local Directory
 Audit an AUR package directory (e.g. from your AUR helper cache):
 ```bash
 ./aur-audit.clj ~/.cache/paru/clone/google-chrome
@@ -48,6 +49,13 @@ Audit a single file:
 ```bash
 ./aur-audit.clj /path/to/PKGBUILD
 ```
+
+### 2. Threat Feed Monitor
+Audit the most recently updated packages from the official AUR RSS feed:
+```bash
+./aur-monitor.clj
+```
+This clones recent packages into `/tmp/` directories, runs the auditor rules, reports findings, and cleans up the sandbox workspaces.
 
 ---
 
