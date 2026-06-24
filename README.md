@@ -30,7 +30,7 @@ paru -S babashka-bin
 ### Install the tool:
 ```bash
 # Clone the repository
-git clone https://github.com/nurazhardotcom/aur-audit.git
+git clone https://gitlab.com/nurazhar/aur-audit.git
 cd aur-audit
 chmod +x aur-audit.clj
 ```

@@ -1,11 +1,11 @@
-# Maintainer: Nur Azhar <96178154+nurazhardotcom@users.noreply.github.com>
+# Maintainer: Nur Azhar <96178154+nurazhar@gitlab.com>
 pkgname=aur-audit-git
 _pkgname=aur-audit
 pkgver=1.0.0.r0.g80c7807
 pkgrel=1
 pkgdesc="A static analysis security auditing tool designed to inspect AUR PKGBUILD and install scripts for indicators of compromise"
 arch=('any')
-url="https://github.com/nurazhardotcom/aur-audit"
+url="https://gitlab.com/nurazhar/aur-audit"
 license=('MIT')
 depends=('babashka')
 makedepends=('git')

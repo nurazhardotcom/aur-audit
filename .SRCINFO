@@ -2,14 +2,14 @@ pkgbase = aur-audit-git
 	pkgdesc = A static analysis security auditing tool designed to inspect AUR PKGBUILD and install scripts for indicators of compromise
 	pkgver = 1.0.0.r0.g80c7807
 	pkgrel = 1
-	url = https://github.com/nurazhardotcom/aur-audit
+	url = https://gitlab.com/nurazhar/aur-audit
 	arch = any
 	license = MIT
 	makedepends = git
 	depends = babashka
 	provides = aur-audit
 	conflicts = aur-audit
-	source = git+https://github.com/nurazhardotcom/aur-audit.git
+	source = git+https://gitlab.com/nurazhar/aur-audit.git
 	sha256sums = SKIP
 
 pkgname = aur-audit-git

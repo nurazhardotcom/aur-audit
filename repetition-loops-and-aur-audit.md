@@ -73,4 +73,4 @@ To reduce false positives in subsequent iterations, we will refine the rule rege
 By combining **Clojure/Babashka** for near-instant system scripts and **Agentic AI** for high-speed design, we deployed a functional tool that audits our supply-chain dependencies in milliseconds. 
 
 Check out the full repository and setup instructions at:
-👉 **[github.com/nurazhardotcom/aur-audit](https://github.com/nurazhardotcom/aur-audit)**
+👉 **[gitlab.com/nurazhar/aur-audit](https://gitlab.com/nurazhar/aur-audit)**
