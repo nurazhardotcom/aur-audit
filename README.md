@@ -1,5 +1,9 @@
 # aur-audit
 
+[![CI](https://github.com/nurazhardotcom/aur-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/nurazhardotcom/aur-audit/actions/workflows/ci.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
+
+
 A lightweight Clojure (Babashka) static analysis tool to inspect Arch User Repository (AUR) `PKGBUILD` and `.install` scripts for potential indicators of compromise (IoC) and backdoors.
 
 Developed in response to the active AUR malicious package incident (June 2026).

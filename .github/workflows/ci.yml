@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  self-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Babashka
+        run: bash <(curl -s https://raw.githubusercontent.com/babashka/babashka/master/install)
+      - name: Show versions
+        run: bb --version
+      - name: Self-audit (the scanner audits its own PKGBUILD)
+        run: bb aur_audit.clj
