@@ -1,8 +1,10 @@
 # aur-audit
 
+[![Latest Release](https://gitlab.com/nurazhar/aur-audit/-/badges/release.svg)](https://gitlab.com/nurazhar/aur-audit/-/releases)
 [![CI](https://github.com/nurazhardotcom/aur-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/nurazhardotcom/aur-audit/actions/workflows/ci.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 
+`aur-audit v1.0.0` · Last verified 2026-07-16 · MIT ©2026 Nur Azhar
 
 A lightweight Clojure (Babashka) static analysis tool to inspect Arch User Repository (AUR) `PKGBUILD` and `.install` scripts for potential indicators of compromise (IoC) and backdoors.
 
