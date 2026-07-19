@@ -1,0 +1,8 @@
+stages:
+  - audit
+
+self-audit:
+  stage: audit
+  image: babashka/babashka:latest
+  script:
+    - bb aur_audit.clj

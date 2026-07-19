@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Detection rules: NET-01, OBF-01, EXEC-01, PERS-01, ENV-01, WRITE-01
 - `aur-monitor.clj` RSS-feed threat scanner
 - Arch Linux packaging via `PKGBUILD` + `.SRCINFO`
-- GitHub Actions self-audit CI on `ubuntu-latest`
+- GitLab CI self-audit
 - `.pre-commit-config.yaml` with detect-secrets
 
 [Unreleased]: https://gitlab.com/nurazhar/aur-audit/-/compare/v1.0.0...main
