@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-07-22
+
+### Added
+- **`hooks/aur-scan.hook`** — pacman `PreTransaction` hook template that routes configured AUR cache directories through `aur-audit` before every `pacman -S`/`-U`.
+- **`bin/aur-audit-pacman-hook`** — wrapper script used by the pacman hook; respects `AUR_AUDIT_DIRS` and runs in best-effort mode so a failed audit never blocks a transaction.
+- **`systemd/aur-audit.service` & `systemd/aur-audit.timer`** — user systemd units for a daily community-blacklist refresh (`python -m aur_check --refresh --full`).
+- **`TODO.md`** — public roadmap tracking the five follow-up ideas (easy/medium/hard).
+
+### Changed
+- **`aur-monitor.clj`** — AUR RSS feed parsing now uses `clojure.data.xml` instead of a fragile regex `re-seq`, so malformed feeds no longer silently break the monitor.
+- **`PKGBUILD`** — installs the hook, systemd units, and the pacman-hook wrapper.
+- **`README.md`** — added a "System Integrations" section documenting the pacman hook and systemd timer.
+
 ## [1.1.0] - 2026-07-22
 
 ### Added

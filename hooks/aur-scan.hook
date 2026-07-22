@@ -1,0 +1,20 @@
+# /etc/pacman.d/hooks/aur-scan.hook
+# Installed by the aur-audit-git AUR package. This hook runs before every
+# package install/upgrade and routes the configured AUR cache directories
+# through the v1.1+ rule set.
+#
+# To skip a single transaction:
+#   sudo pacman ... --ignore-hook aur-scan
+# To disable permanently:
+#   sudo rm /etc/pacman.d/hooks/aur-scan.hook
+
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = AUR security audit hook
+When = PreTransaction
+Exec = /usr/bin/aur-audit-pacman-hook

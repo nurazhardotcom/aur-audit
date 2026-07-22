@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# aur-audit-pacman-hook — PreTransaction hook wrapper for pacman.
+# This script is executed by the pacman hook installed to
+# /etc/pacman.d/hooks/90-aur-scan.hook.
+#
+# Limitations:
+#   pacman hooks do not receive the list of packages being installed, so we
+#   cannot audit only the package currently being upgraded. Instead, we scan
+#   the configured AUR helper clone directories. By default this is harmless:
+#   directories that do not contain PKGBUILD/.SRCINFO targets simply report
+#   "No audit targets" and return success.
+#
+# Configure by setting AUR_AUDIT_DIRS (space-separated) in your shell env or in
+# /etc/environment, for example:
+#   AUR_AUDIT_DIRS="/home/youruser/.cache/paru/clone/ /var/cache/pacman/pkg/"
+#
+set -euo pipefail
+
+AUR_AUDIT_DIRS="${AUR_AUDIT_DIRS:-$HOME/.cache/paru/clone/ /var/cache/pacman/pkg/}"
+
+echo "[aur-audit] Pre-transaction AUR audit hook started"
+
+# Split on whitespace while tolerating paths that contain spaces is hard in pure
+# bash; we accept the same convention systemd uses (space-separated tokens).
+read -ra dirs <<< "$AUR_AUDIT_DIRS"
+for dir in "${dirs[@]}"; do
+  if [[ -d "${dir}" ]]; then
+    # Run in best-effort mode: a permission error on one directory should not
+    # block the transaction; a finding only logs, it does not abort pacman.
+    /usr/bin/aur-audit --no-host --json "${dir}" || true
+  fi
+done
+
+echo "[aur-audit] Pre-transaction AUR audit hook finished"

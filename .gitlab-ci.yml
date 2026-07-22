@@ -6,7 +6,7 @@ test:
   stage: test
   image: babashka/babashka:latest
   script:
-    - bb aur-test
+    - bb aur_audit_test.clj
 
 self-audit:
   stage: audit

@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily AUR malware blacklist scan
+Documentation=https://gitlab.com/nurazhar/aur-audit
+After=network.target
+
+[Service]
+Type=oneshot
+# Adjust WorkingDirectory to wherever you cloned lenucksi/aur-malware-check.
+WorkingDirectory=%h/tools/aur-malware-check
+ExecStart=/usr/bin/python3 -m aur_check --refresh --full
+Environment=PATH=/usr/bin:/bin

@@ -208,7 +208,7 @@
         target (or (first (remove #(str/starts-with? (str %) "--") args)) ".")]
     (when-not json-mode
       (println (colorize :bold (colorize :green "==========================================")))
-      (println (colorize :bold (colorize :green "  AUR Package Security Audit · v1.1.0     ")))
+      (println (colorize :bold (colorize :green "  AUR Package Security Audit · v1.1.1     ")))
       (println (colorize :bold (colorize :green "=========================================="))))
     (if (fs/exists? target)
       (let [fs-findings (if (fs/directory? target)
@@ -219,7 +219,7 @@
             critical-high (filter #(or (= (:level %) :critical) (= (:level %) :high)) findings)]
         (if json-mode
           (do
-            (print-json {:version "1.1.0"
+            (print-json {                         :version "1.1.1"
                          :target target
                          :findings (vec findings)
                          :summary {:total (count findings)
