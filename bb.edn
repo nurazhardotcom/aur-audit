@@ -1,1 +1,6 @@
-{:paths ["."]}
+{:paths ["."]
+ :tasks
+ {:aur-test {:doc "Run all aur-audit tests via the v1.1 test runner. (Note: babashka ships a builtin :test that scans test/, so we use a distinct task name.)"
+            :requires ([clojure.test aur-audit-test])
+            :task (let [r (clojure.test/run-tests 'aur-audit-test)]
+                    (System/exit (if (zero? (:fail r)) 0 1)))}}}

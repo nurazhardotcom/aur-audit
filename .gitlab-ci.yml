@@ -1,5 +1,12 @@
 stages:
+  - test
   - audit
+
+test:
+  stage: test
+  image: babashka/babashka:latest
+  script:
+    - bb aur-test
 
 self-audit:
   stage: audit
