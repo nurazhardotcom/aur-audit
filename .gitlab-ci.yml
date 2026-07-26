@@ -1,6 +1,7 @@
 stages:
   - test
   - audit
+  - mirror
 
 test:
   stage: test
@@ -13,3 +14,17 @@ self-audit:
   image: babashka/babashka:latest
   script:
     - bb aur_audit.clj
+
+mirror-github:
+  stage: mirror
+  image: alpine:latest
+  before_script:
+    - apk add --no-cache git
+  script:
+    - git remote set-url origin "https://x-access-token:${GH_MIRROR_TOKEN}@github.com/nurazhardotcom/${CI_PROJECT_NAME}.git"
+    - git push origin main --force
+  only:
+    - main
+  allow_failure: true
+  variables:
+    GIT_STRATEGY: fetch
