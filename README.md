@@ -2,8 +2,7 @@
 
 > **Status:** Active — maintained. See [AI_DISCLOSURE.md](AI_DISCLOSURE.md).
 
-[![Latest Release](https://gitlab.com/nurazhar/aur-audit/-/badges/release.svg)](https://gitlab.com/nurazhar/aur-audit/-/releases)
-[![CI](https://gitlab.com/nurazhar/aur-audit/badges/main/pipeline.svg)](https://gitlab.com/nurazhar/aur-audit/-/pipelines)
+[![Latest Release](https://img.shields.io/github/v/release/nurazhardotcom/aur-audit)](https://github.com/nurazhardotcom/aur-audit/releases)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 
 `aur-audit v1.1.1` · Last verified 2026-07-22 · MIT ©2026 Nur Azhar
@@ -47,7 +46,7 @@ paru -S babashka-bin
 ### Install the tool:
 ```bash
 # Clone the repository
-git clone https://gitlab.com/nurazhar/aur-audit.git
+git clone https://github.com/nurazhardotcom/aur-audit.git
 cd aur-audit
 chmod +x aur-audit.clj
 ```
