@@ -1,5 +1,7 @@
 # aur-audit
 
+> **Status:** Active — maintained. See [AI_DISCLOSURE.md](AI_DISCLOSURE.md).
+
 [![Latest Release](https://gitlab.com/nurazhar/aur-audit/-/badges/release.svg)](https://gitlab.com/nurazhar/aur-audit/-/releases)
 [![CI](https://gitlab.com/nurazhar/aur-audit/badges/main/pipeline.svg)](https://gitlab.com/nurazhar/aur-audit/-/pipelines)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
